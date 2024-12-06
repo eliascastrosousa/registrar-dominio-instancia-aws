@@ -52,3 +52,7 @@ Após isso confime as alterações e clique emn criar registros.
 
 Com isso, após alguns minutos o Route 53 propagará as alterações para todos so servidores DNS. e você poderá acessar utilizando seu dominio. 
 
+Testando através do terminal e acessando via SSH com o dominio
+
+![terminal](https://github.com/user-attachments/assets/f561a3ab-8faa-45a4-819e-eaf8beb1c956)
+
