@@ -2,7 +2,7 @@
 
 > Passo a passo para alterar o ip da instancia para um endereço fixo e apontar um dominio para o servidor.
 
-### Adicionando IPv4 fixo para a Instancia
+## Adicionando IPv4 fixo para a Instancia
 
 No painel do EC2 em Recursos ou na barra lateral em Rede e segurança, vá em IPs elásticos
 
@@ -34,5 +34,21 @@ Feito isso, clique em Associar.
 Após isso, deverá aparecer a informação que o Endereço IP elástico foi associado com êxito.
 Você pode verificar a associação retornando ao painel de instancias e verificando a alteração do ip da maquina ao novo que foi gerado. 
 
-### Registrando dominio na Instancia.
+## Registrando dominio na Instancia.
+
+Utilizando o Route 53, vá em zonas hospedadas e acesse sua zona hospedada (caso você não tenha uma ainda, **este passo a passo pode te ajudar**)
+
+Em Registros, vá em criar registro e informe o nome do subdominio ex: sgb e ele completara com o dominio principal da sua zona. 
+
+informe o tipo de registro, selecione o tipo de registro, que no meu caso será o: A - roteia o trafego para um endereço IPv4 e alguns recursos da AWS.
+
+Em TTL coloque de 1h.
+
+![criar registro](https://github.com/user-attachments/assets/c731d41c-a6f4-4a67-9d31-ad4575152eea)
+
+Você pode clicar em Adicionar outro registro, e criar variações deste subdominio, como www.sgb entre outros.
+
+Após isso confime as alterações e clique emn criar registros.
+
+Com isso, após alguns minutos o Route 53 propagará as alterações para todos so servidores DNS. e você poderá acessar utilizando seu dominio. 
 
